@@ -1,11 +1,19 @@
-import BaseLayout from "../components/layouts/BaseLayout";
+import BaseLayout from "../../components/layouts/BaseLayout";
+import Link from "next/link";
 import axios from "axios";
 
 
 const Portfolios = ({posts}) => {
   const renderPosts = () => {
     return posts.map(
-      post => <li key={post.id}>{post.id}</li>
+      post => 
+        <li key={post.id}>
+          <Link href={`/portfolios/${post.id}`}>
+            <a>
+              {post.title}
+            </a>
+          </Link>
+        </li>
     )
   }
 
