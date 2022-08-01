@@ -1,11 +1,11 @@
 import BaseLayout from "../components/layouts/BaseLayout";
 
-const Home = () => {
+const Portfolios = () => {
   return (
     <BaseLayout>
-      <h1>I am Index page</h1>
+      <h1>I am Portfolios page</h1>
     </ BaseLayout>
   )
 }
 
-export default Home;
+export default Portfolios;
