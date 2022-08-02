@@ -1,13 +1,15 @@
 import BaseLayout from "../../components/layouts/BaseLayout";
-import { useRouter } from "next/router";
+import BasePage from "../../components/BasePage";
 import axios from "axios";
 
 const Portfolio = ({portfolio}) =>{
   return (
     <BaseLayout>
-      <p>{portfolio.id}</p>
-      <p>{portfolio.title}</p>
-      <p>{portfolio.body}</p>
+      <BasePage>
+        <p>{portfolio.id}</p>
+        <p>{portfolio.title}</p>
+        <p>{portfolio.body}</p>
+      </BasePage>
     </BaseLayout>
   )
 }
