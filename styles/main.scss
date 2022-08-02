@@ -1,82 +1,16 @@
 
 @import "./shared/fonts";
+// Components
+@import "./components/header";
+// Pages
+@import './index';
+
+.absolute {
+  position: absolute;
+}
 
 html, body {
+  width: 100%;
+  height: 100%;
   font-family: "Montserrat", "Helvetica";
 }
-
-
-
-// NORMAL CSS
-
-// .parent-class h1 {
-//   color: blue;
-// }
-
-// .parent-class h2 {
-//   color: red;
-// }
-
-// .parent-class .child-class {
-//   font-weight: bold;
-// }
-
-// .parent-class.sibling-class h1 {
-//   font-weight: bold;
-// }
-
-// .parent-class.sibling-class h2 {
-//   font-size: 50px;
-// }
-
-// .parent-class .parent-class-title {
-//   color: red;
-// }
-
-// .parent-class-title {
-//   color: red;
-// }
-
-// .parent-class-date {
-//   color: blue;
-// }
-
-// SCSS
-
-.parent-class {
-  &-title {
-    color: red;
-  }
-
-  &-date {
-    color: blue;
-  }
-}
-
-// .parent-class {
-//   &.sibling-class {
-//     h1 {
-//       font-weight: bold;
-//     }
-
-//     h2 {
-//       font-size: 50px;
-//     }
-//   }
-// }
-
-// .parent-class {
-//   h1 {
-//     color: blue;
-//   }
-
-//   h2 {
-//     color: red;
-//   }
-// }
-
-// .parent-class {
-//   .child-class {
-//     font-weight: bold;
-//   }
-// }
