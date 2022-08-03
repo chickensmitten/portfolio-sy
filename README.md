@@ -9,3 +9,37 @@ npm install swr
 npm install --save dotenv-webpack@1.7.0
 
 npm install --save @auth0/nextjs-auth0@0.11.0
+
+# Adding Roles to Auth0
+`
+function (user, context, callback) {
+   const NAMESPACE = 'http://portfolio-jerga.com';
+   user.app_metadata = user.app_metadata || {};
+   // You can add a Role based on what you want
+   // In this case I check domain
+   var addRolesToUser = function(user, cb) {
+     if (user.email === 'chia.shengyeong@gmail.com') {
+       cb(null, ['admin']);
+     } else {
+       cb(null, ['guest']);
+     }
+   };
+
+   addRolesToUser(user, function(err, roles) {
+     if (err) {
+       callback(err);
+     } else {
+       user.app_metadata.roles = roles;
+       auth0.users.updateAppMetadata(user.user_id, user.app_metadata)
+         .then(function(){
+           context.idToken[NAMESPACE + '/roles'] = user.app_metadata.roles;
+           context.accessToken[NAMESPACE + '/roles'] = user.app_metadata.roles;
+           callback(null, user, context);
+         })
+         .catch(function(err){
+           callback(err);
+         });
+     }
+   });
+ }
+`
