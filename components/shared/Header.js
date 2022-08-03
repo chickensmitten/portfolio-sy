@@ -19,10 +19,10 @@ const BsNavLink = props => {
 }
 
 const LoginLink = () =>
-  <BsNavLink href="/api/v1/login" title="Login" />
+  <a className="nav-link port-navbar-link" href="/api/v1/login">Login</a>
 
- const LogoutLink = () =>
-   <span className="nav-link port-navbar-link clickable">Logout</span>
+const LogoutLink = () =>
+  <span className="nav-link port-navbar-link clickable">Logout</span>
 
 const Header = () => {
   
