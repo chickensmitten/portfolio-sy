@@ -20,7 +20,7 @@ function (user, context, callback) {
    // You can add a Role based on what you want
    // In this case I check domain
    var addRolesToUser = function(user, cb) {
-     if (user.email === 'chia.shengyeong@gmail.com') {
+     if (user.email === 'explanation@gmail.com') {
        cb(null, ['admin']);
      } else {
        cb(null, ['guest']);
