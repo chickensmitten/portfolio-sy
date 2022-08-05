@@ -13,7 +13,7 @@ if using scss, have to npm install --save sass
 with .env.procution.local, when you run `npm run build`, it will build your app from that file.
 
 # Adding Roles to Auth0
-`
+```
 function (user, context, callback) {
    const NAMESPACE = 'http://portfolio-jerga.com';
    user.app_metadata = user.app_metadata || {};
@@ -44,4 +44,4 @@ function (user, context, callback) {
      }
    });
  }
-`
+```
