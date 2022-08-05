@@ -4,11 +4,15 @@ reactstrap and bootstrap version
 
 if using scss, have to npm install --save sass
 
-`npm install swr`
+```
+npm install swr
 
-`npm install --save dotenv-webpack@1.7.0`
+npm install --save dotenv-webpack@1.7.0
 
-`npm install --save @auth0/nextjs-auth0@0.11.0`
+npm install --save @auth0/nextjs-auth0@0.11.0
+
+npm install react-hook-form@5.7.2 --save
+```
 
 with .env.procution.local, when you run `npm run build`, it will build your app from that file.
 
