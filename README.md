@@ -14,6 +14,8 @@ npm install --save @auth0/nextjs-auth0@0.11.0
 npm install react-hook-form@5.7.2 --save
 
 npm install react-datepicker --save
+
+npm install react-toastify@6.0.4
 ```
 
 with .env.procution.local, when you run `npm run build`, it will build your app from that file.
