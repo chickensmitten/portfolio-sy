@@ -41,6 +41,11 @@
   }
 
   .port-dropdown-menu {
+    
+    .dropdown-item:active {
+      background-color: #f5f5f5;
+    }
+
     .port-dropdown-item {
       color: #4e4e4e;
 
