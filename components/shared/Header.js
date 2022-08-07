@@ -26,14 +26,14 @@ const BsNavLink = props => {
 
 const BsNavBrand = () =>
   <Link href="/">
-    <a className="navbar-brand port-navbar-brand">Filip Jerga</a>
+    <a className="navbar-brand port-navbar-brand">SY</a>
   </Link>
 
 const LoginLink = () =>
-  <a className="nav-link port-navbar-link" href="/api/v1/login">Login</a>
+  <Link className="nav-link port-navbar-link" href="/api/v1/login">Login</Link>
 
 const LogoutLink = () =>
-  <a className="nav-link port-navbar-link" href="/api/v1/logout">Logout</a>
+  <Link className="nav-link port-navbar-link" href="/api/v1/logout">Logout</Link>
 
 
 const AdminMenu = () => {
