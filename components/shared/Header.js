@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 import {
@@ -5,18 +6,27 @@ import {
   Navbar,
   NavbarToggler,
   Nav,
-  NavItem
+  NavItem,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
 } from 'reactstrap';
 
 
 const BsNavLink = props => {
-  const { href, title } = props;
+  const { href, title, className=''} = props;
   return (
     <Link href={href}>
-      <a className="nav-link port-navbar-link">{title}</a>
+      <a className={`nav-link port-navbar-link ${className}`}>{title}</a>
     </Link>
   )
 }
+
+const BsNavBrand = () =>
+  <Link href="/">
+    <a className="navbar-brand port-navbar-brand">Filip Jerga</a>
+  </Link>
 
 const LoginLink = () =>
   <a className="nav-link port-navbar-link" href="/api/v1/login">Login</a>
@@ -24,8 +34,32 @@ const LoginLink = () =>
 const LogoutLink = () =>
   <a className="nav-link port-navbar-link" href="/api/v1/logout">Logout</a>
 
+
+const AdminMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <Dropdown
+      className="port-navbar-link port-dropdown-menu"
+      nav
+      isOpen={isOpen}
+      toggle={() => setIsOpen(!isOpen)}>
+        <DropdownToggle className="port-dropdown-toggle" nav carret>
+          Admin
+        </DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem>
+            <BsNavLink
+              className="port-dropdown-item"
+              href="/portfolios/new"
+              title="Create Portfolio"
+            />
+          </DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+  )
+}
+
 const Header = ({user, loading, className}) => {
-  
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -35,11 +69,7 @@ const Header = ({user, loading, className}) => {
         className={`port-navbar port-default absolute ${className}`}
         dark
         expand="md">
-        <div className="navbar-brand">
-          <Link href="/">
-            <a className="port-navbar-brand">Personal Portfolio</a>
-          </Link>
-        </div>
+        <BsNavBrand />
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -60,24 +90,27 @@ const Header = ({user, loading, className}) => {
             </NavItem>
             {/* <NavItem className="port-navbar-item">
               <BsNavLink href="/secret" title="Secret"/>
-            </NavItem>   
+            </NavItem>
             <NavItem className="port-navbar-item">
               <BsNavLink href="/secretssr" title="SecretSSR"/>
-            </NavItem>       
+            </NavItem>
             <NavItem className="port-navbar-item">
               <BsNavLink href="/onlyadmin" title="Admin"/>
-            </NavItem>       
+            </NavItem>
             <NavItem className="port-navbar-item">
               <BsNavLink href="/onlyadminssr" title="AdminSSR"/>
-            </NavItem>                                */}
+            </NavItem> */}
           </Nav>
           <Nav navbar>
             { !loading &&
               <>
                 { user &&
-                  <NavItem className="port-navbar-item">
-                    <LogoutLink />
-                  </NavItem>
+                  <>
+                    <AdminMenu />
+                    <NavItem className="port-navbar-item">
+                      <LogoutLink />
+                    </NavItem>
+                  </>
                 }
                 { !user &&
                   <NavItem className="port-navbar-item">
@@ -86,7 +119,7 @@ const Header = ({user, loading, className}) => {
                 }
               </>
             }
-          </Nav>        
+          </Nav>
         </Collapse>
       </Navbar>
     </div>
