@@ -12,9 +12,10 @@ const Masthead = ({imagePath}) =>
             <h1>Blogs Dashboard</h1>
             <span className="subheading">
               Let's write some nice blog today{' '}
-                <Link href='/blogs/editor'>
-                <Button color="primary">Create a new Blog</Button>
-              </Link></span>
+              <Link href='/blogs/editor'>
+                <a color="primary">Create a new Blog</a>
+              </Link>
+            </span>
           </div>
         </div>
       </Row>
