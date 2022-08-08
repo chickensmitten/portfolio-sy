@@ -30,10 +30,14 @@ const BsNavBrand = () =>
   </Link>
 
 const LoginLink = () =>
-  <Link className="nav-link port-navbar-link" href="/api/v1/login">Login</Link>
+  <Link href="/api/v1/login">
+    <a className="nav-link port-navbar-link" >Login</a>
+  </Link>
 
 const LogoutLink = () =>
-  <Link className="nav-link port-navbar-link" href="/api/v1/logout">Logout</Link>
+  <Link href="/api/v1/logout">
+    <a className="nav-link port-navbar-link">Logout</a>
+  </Link>
 
 
 const AdminMenu = () => {
@@ -47,7 +51,7 @@ const AdminMenu = () => {
         <DropdownToggle className="port-dropdown-toggle" nav caret>
           Admin
         </DropdownToggle>
-        <DropdownMenu right>
+        <DropdownMenu end>
           <DropdownItem>
             <BsNavLink
               className="port-dropdown-item"
