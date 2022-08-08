@@ -36,8 +36,7 @@ export default class PortButtonDropdown extends React.Component {
 
     return (
       <ButtonDropdown className="port-dropdown" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle caret size="sm">
-        </DropdownToggle>
+        <DropdownToggle caret size="sm"> </DropdownToggle>
         {this.renderMenu(items)}
       </ButtonDropdown>
     );
