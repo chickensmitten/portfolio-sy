@@ -16,6 +16,8 @@ npm install react-hook-form@5.7.2 --save
 npm install react-datepicker --save
 
 npm install react-toastify@6.0.4
+
+npm install moment
 ```
 
 with .env.procution.local, when you run `npm run build`, it will build your app from that file.
