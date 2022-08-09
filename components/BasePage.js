@@ -31,7 +31,7 @@ const BasePage = props => {
         <link
           rel="canonical"
           href={`${process.env.BASE_URL}${canonicalPath ? canonicalPath : router.asPath}`} />
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet"></link>
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>        
         <meta
           name="description"
