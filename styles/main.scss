@@ -1,29 +1,19 @@
 
-@import "./shared/fonts";
+@import './shared/fonts';
+
 // Components
-@import "./components/header";
+@import './components/header';
+
 // Pages
 @import './index';
-
 @import './portfolios';
-
 @import './blogs';
-
-.absolute {
-  position: absolute;
-}
+@import './about';
 
 html, body {
-  width: 100%;
   height: 100%;
-  font-family: "Montserrat", "Helvetica";
-}
-
-.self-typed {
-  font-size: 30px;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 2px;
+  width: 100%;
+  font-family: 'Montserrat', 'Helvetica' !important;
 }
 
 .clickable {
@@ -41,11 +31,16 @@ html, body {
     display: inline-block;
     margin-bottom: 20px;
   }
+
 }
 
-.clickable {
-  cursor: pointer;
+.absolute {
+  position: absolute;
 }
 
-
-
+.self-typed {
+  font-size: 31px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
